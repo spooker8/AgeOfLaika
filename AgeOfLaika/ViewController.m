@@ -10,13 +10,31 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *ageTextField;
+@property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 @end
+
+
+
+
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)actionButton:(id)sender {
+    
+  
+    int AgeOfLaika = [self.ageTextField.text integerValue];
+    
+   int CalculatedAge = AgeOfLaika * 7;
+    
+    self.ageLabel.text = [NSString stringWithFormat:@"%i", CalculatedAge];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
